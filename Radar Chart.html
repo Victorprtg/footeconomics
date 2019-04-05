@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://www.chartjs.org/samples/latest/charts/radar.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Radar Chart</title>
+	<script async="" src="./Radar Chart_files/analytics.js.téléchargement"></script><script src="./Radar Chart_files/Chart.min.js.téléchargement"></script>
+	<script src="./Radar Chart_files/utils.js.téléchargement"></script>
+	<style>
+		canvas {
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+		}
+	</style>
+<style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head>
+
+<body>
+	<div style="width:80%"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+		<canvas id="canvas" style="display: block; height: 252px; width: 505px;" width="757" height="378" class="chartjs-render-monitor"></canvas>
+	</div>
+
+	<script>
+		var randomScalingFactor = function() {
+			return Math.round(Math.random() * 100);
+		};
+
+		var color = Chart.helpers.color;
+		var config = {
+			type: 'radar',
+			data: {
+				labels: ['Premier League', 'Serie A', 'LaLiga', 'Bundesliga', 'Ligue 1'],
+				datasets: [{
+					label: 'Droits TV annuels nationaux en M€',
+					backgroundColor: color(window.chartColors.red).alpha(0.2).rgbString(),
+					borderColor: window.chartColors.red,
+					pointBackgroundColor: window.chartColors.red,
+					data: [
+						2300,
+945,
+750,
+748,
+628,
+
+					]
+				}, {
+					label: '+ droits internationaux',
+					backgroundColor: color(window.chartColors.blue).alpha(0.2).rgbString(),
+					borderColor: window.chartColors.blue,
+					pointBackgroundColor: window.chartColors.blue,
+					data: [
+						3200,
+1065,
+880,
+828,
+778,
+
+
+					]
+				}]
+			},
+			options: {
+				legend: {
+					position: 'top',
+				},
+				title: {
+					display: true,
+					text: 'Droits TV 2016'
+				},
+				scale: {
+					ticks: {
+						beginAtZero: true
+					}
+				}
+			}
+		};
+
+		window.onload = function() {
+			window.myRadar = new Chart(document.getElementById('canvas'), config);
+		};
+
+		document.getElementById('randomizeData').addEventListener('click', function() {
+			config.data.datasets.forEach(function(dataset) {
+				dataset.data = dataset.data.map(function() {
+					return randomScalingFactor();
+				});
+			});
+
+			window.myRadar.update();
+		});
+
+		var colorNames = Object.keys(window.chartColors);
+		document.getElementById('addDataset').addEventListener('click', function() {
+			var colorName = colorNames[config.data.datasets.length % colorNames.length];
+			var newColor = window.chartColors[colorName];
+
+			var newDataset = {
+				label: 'Dataset ' + config.data.datasets.length,
+				borderColor: newColor,
+				backgroundColor: color(newColor).alpha(0.2).rgbString(),
+				pointBackgroundColor: newColor,
+				data: [],
+			};
+
+			for (var index = 0; index < config.data.labels.length; ++index) {
+				newDataset.data.push(randomScalingFactor());
+			}
+
+			config.data.datasets.push(newDataset);
+			window.myRadar.update();
+		});
+
+		document.getElementById('addData').addEventListener('click', function() {
+			if (config.data.datasets.length > 0) {
+				config.data.labels.push('dataset #' + config.data.labels.length);
+
+				config.data.datasets.forEach(function(dataset) {
+					dataset.data.push(randomScalingFactor());
+				});
+
+				window.myRadar.update();
+			}
+		});
+
+		document.getElementById('removeDataset').addEventListener('click', function() {
+			config.data.datasets.splice(0, 1);
+			window.myRadar.update();
+		});
+
+		document.getElementById('removeData').addEventListener('click', function() {
+			config.data.labels.pop(); // remove the label first
+
+			config.data.datasets.forEach(function(dataset) {
+				dataset.data.pop();
+			});
+
+			window.myRadar.update();
+		});
+	</script>
+
+
+
+</body></html>
