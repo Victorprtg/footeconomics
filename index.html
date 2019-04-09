@@ -63,7 +63,8 @@
           </a> Taha Ettouati </p>
       </div>
       <ul class="nav">
-        <li><a href="./index.html" title="">Home</a></li>
+        <li><a href="./index.html" title="">Foot Economics</a></li>
+        <li><a href="./about.html" title="">Premier League</a></li>
         <li><a href="./contact.html" title="">Contact</a></li>
 
       </ul>
@@ -317,94 +318,11 @@ function toggleDataSeries(e) {
 }
 </script>       
     <!-- end bar chart  -->
-    <br />
-    <br />
+<a href="about.html" class="btn btn-primary" title=""> Pourquoi la Premier League est-elle si spéciale?</a>
    
     <!-- Begin premierleague chart  -->
 
-    <br />
-    <br />
-         <p>Blabla classement
-</p>
-          <p><img class="img-responsive" alt="" src="./assets/images/classement.png"></p>
-
-    <!-- end premierleague chart  -->
-
-     <!-- Begin line chart  -->
-    
- <p>BlaBla
-</p>
-     <br />
-    <br />  
-
-<canvas id="speedChart" width="600" height="200"></canvas>
-    
-<script>
-var speedCanvas = document.getElementById("speedChart");
-
-Chart.defaults.global.defaultFontFamily = "Lato";
-Chart.defaults.global.defaultFontSize = 18;
-
-var dataFirst = {
-    label: "Transferts",
-    data: [51,	51,	51,	51,	51,	51,	178,	178,	178,	178,	532,	532,	532,	454,	454,	454,	756,	756,	756,	786, 786,	786,	1338,	1338,	1338,	2277,	2277,	2277,
-
-],
-    lineTension: 0.3,
-    fill: false,
-    borderColor: 'blue',
-    backgroundColor: 'transparent',
-    pointBorderColor: 'red',
-    pointBackgroundColor: 'white',
-    pointRadius: 5,
-    pointHoverRadius: 15,
-    pointHitRadius: 30,
-    pointBorderWidth: 2,
-    pointStyle: 'rect'
-  };
-
-var dataSecond = {
-    label: "Droits TV",
-    data: [38,	38,	38,	38,	38,	38,	134,	134,	134,	134,	400,	400,	400,	341,	341,	341,	569,	569,	569,	591,	591,	591,	1006,	1006,	1006,	1712,	1712,	1712
-],
-    lineTension: 0.3,
-    fill: false,
-    borderColor: 'purple',
-    backgroundColor: 'transparent',
-    pointBorderColor: 'red',
-    pointBackgroundColor: 'white',
-    pointRadius: 5,
-    pointHoverRadius: 15,
-    pointHitRadius: 30,
-    pointBorderWidth: 2
-  };
-
-var speedData = {
-  labels: ["1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019"],
-  datasets: [dataFirst, dataSecond]
-};
-
-var chartOptions = {
-  legend: {
-    display: true,
-    position: 'top',
-    labels: {
-      boxWidth: 80,
-      fontColor: 'black'
-    }
-  }
-};
-
-var lineChart = new Chart(speedCanvas, {
-  type: 'line',
-  data: speedData,
-  options: chartOptions
-});
-</script>
-    
-    
-    </div>
-    <!-- end bar chart  -->
+   
 
     
 <script>
@@ -442,6 +360,42 @@ document.addEventListener("DOMContentLoaded", function (event) {
   navActivePage();
 });
 </script>
+
+
+
+
+
+<HR align=center size=8 width="50%">
+		<!-- The content of your page would go here. -->
+
+		<footer class="footer-distributed">
+
+			<div class="footer-right">
+
+				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a href="#"><i class="fa fa-github"></i></a>
+
+			</div>
+
+			<div class="footer-left">
+
+				<p class="footer-links">
+					<a href="#">Home</a>
+					·
+					<a href="#">About</a>
+					·
+					<a href="#">Faq</a>
+					·
+					<a href="https://victorprtg.github.io/footeconomics/contact.html">Contact</a>
+				</p>
+
+				<p>Foot Economist &copy; 2019</p>
+			</div>
+
+		</footer>
+    
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
 
