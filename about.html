@@ -27,7 +27,7 @@
     
 </head>
 
-<body>
+<body >
 
 <!-- Add your content of header -->
 <header class="">
@@ -66,9 +66,9 @@
         <li><a href="./index.html" title="">Foot Economics</a></li>
         <li><a href="./about.html" title="">Premier League</a></li>
         <li><a href="./contact.html" title="">Contact</a></li>
+    <br/>
+    <br/>
 
-    <br />
-    <br />
       </ul>
 
       <nav class="nav-footer">
@@ -101,10 +101,127 @@
 @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style>
     <!-- Ne pas enlever  -->
 
-    <!-- begin compo chart  -->
+   
+
+       <br />
+    <br />
+        <!-- Begin premierleague chart  -->
+
+<div   class="row">
+  <div   class="col-xs-12 col-md-6">
+<img class="img-responsive" alt="" src="./assets/images/classement.png">
+    </div>
+  <div class="col-xs-12 col-md-6">
+    <h1>TITRE</h1>
+    
+   <p><font color="black">Blabla  </font></p>
+    
+    <h3>Titre </h3>
+
+   <p><font color="black">Blabla  </font></p>
+ </div>
+</div>
+    <!-- end premierleague chart  -->
+
+     <!-- Begin line chart  -->
+    
+   <p><font color="black">Blabla  </font></p>
+
+     <br />
+    <br />  
+<div>
+<canvas id="speedChart" width="600" height="200"></canvas>
+    
+<script>
+var speedCanvas = document.getElementById("speedChart");
+
+Chart.defaults.global.defaultFontFamily = "Lato";
+Chart.defaults.global.defaultFontSize = 18;
+
+var dataFirst = {
+    label: "Transferts",
+    data: [443,	557,	330,	410,	479,	469,	477,	784,	755,	502,	622,	550, 674,	795,	1108,	1299,	1462,	1943,	1018
+
+],
+    lineTension: 0.3,
+    fill: false,
+    borderColor: 'blue',
+    backgroundColor: 'transparent',
+    pointBorderColor: 'red',
+    pointBackgroundColor: 'white',
+    pointRadius: 5,
+    pointHoverRadius: 15,
+    pointHitRadius: 30,
+    pointBorderWidth: 2,
+    pointStyle: 'rect'
+  };
+
+var dataSecond = {
+    label: "Droits TV",
+    data: [134,	134,	400,	400,	400,	341,	341,	341,	569,	569,	569,	591,	591,	591,	1006,	1006,	1006,	1712,	1712
+],
+    lineTension: 0.3,
+    fill: false,
+    borderColor: 'purple',
+    backgroundColor: 'transparent',
+    pointBorderColor: 'red',
+    pointBackgroundColor: 'white',
+    pointRadius: 5,
+    pointHoverRadius: 15,
+    pointHitRadius: 30,
+    pointBorderWidth: 2
+  };
+
+var speedData = {
+  labels: ["2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019"],
+  datasets: [dataFirst, dataSecond]
+};
+
+var chartOptions = {
+  legend: {
+    display: true,
+    position: 'top',
+    labels: {
+      boxWidth: 80,
+      fontColor: 'black'
+    }
+  }
+};
+
+var lineChart = new Chart(speedCanvas, {
+  type: 'line',
+  data: speedData,
+  options: chartOptions
+});
+</script>
+    
+    
+    </div>
+    <!-- end bar chart  -->
+
+      <br />
+    <br />   
+<div class="row">
+<div class="col-xs-12 col-md-6">
+    <h1>TITRE</h1>
+   <p><font color="black">Blabla  </font></p>
+     
+
+    
+    <h3>Titre </h3>
+
+   <p><font color="black">Blabla  </font></p>
+ </div>
+   <div class="col-xs-12 col-md-6">
+<img class="img-responsive" alt="" src="./assets/images/classement.png">
+    </div>   
+</div> 
+    
+
+ <!-- begin compo chart  -->
          <br />
     <br /> 
-<div id="chartContainer3" style="height: 300px; width: 80%;"></div>
+<div   id="chartContainer3" style="height: 300px; width: 80%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
    <div>
        <script>
@@ -201,124 +318,7 @@ chart.render();
 </script>
        </div>
        <!-- end compo chart  -->
-
-       <br />
-    <br />
-        <!-- Begin premierleague chart  -->
-
-<div class="row">
-  <div class="col-xs-12 col-md-6">
-<img class="img-responsive" alt="" src="./assets/images/classement.png">
-    </div>
-  <div class="col-xs-12 col-md-6">
-    <h1>TITRE</h1>
-    
-   <p><font color="black">Blabla  </font></p>
-    
-    <h3>Titre </h3>
-
-   <p><font color="black">Blabla  </font></p>
- </div>
 </div>
-    <!-- end premierleague chart  -->
-
-     <!-- Begin line chart  -->
-    
-   <p><font color="black">Blabla  </font></p>
-
-     <br />
-    <br />  
-
-<canvas id="speedChart" width="600" height="200"></canvas>
-    
-<script>
-var speedCanvas = document.getElementById("speedChart");
-
-Chart.defaults.global.defaultFontFamily = "Lato";
-Chart.defaults.global.defaultFontSize = 18;
-
-var dataFirst = {
-    label: "Transferts",
-    data: [443,	557,	330,	410,	479,	469,	477,	784,	755,	502,	622,	550, 674,	795,	1108,	1299,	1462,	1943,	1018
-
-],
-    lineTension: 0.3,
-    fill: false,
-    borderColor: 'blue',
-    backgroundColor: 'transparent',
-    pointBorderColor: 'red',
-    pointBackgroundColor: 'white',
-    pointRadius: 5,
-    pointHoverRadius: 15,
-    pointHitRadius: 30,
-    pointBorderWidth: 2,
-    pointStyle: 'rect'
-  };
-
-var dataSecond = {
-    label: "Droits TV",
-    data: [134,	134,	400,	400,	400,	341,	341,	341,	569,	569,	569,	591,	591,	591,	1006,	1006,	1006,	1712,	1712
-],
-    lineTension: 0.3,
-    fill: false,
-    borderColor: 'purple',
-    backgroundColor: 'transparent',
-    pointBorderColor: 'red',
-    pointBackgroundColor: 'white',
-    pointRadius: 5,
-    pointHoverRadius: 15,
-    pointHitRadius: 30,
-    pointBorderWidth: 2
-  };
-
-var speedData = {
-  labels: ["2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019"],
-  datasets: [dataFirst, dataSecond]
-};
-
-var chartOptions = {
-  legend: {
-    display: true,
-    position: 'top',
-    labels: {
-      boxWidth: 80,
-      fontColor: 'black'
-    }
-  }
-};
-
-var lineChart = new Chart(speedCanvas, {
-  type: 'line',
-  data: speedData,
-  options: chartOptions
-});
-</script>
-    
-    
-    </div>
-    <!-- end bar chart  -->
-
-      <br />
-    <br />   
-<div class="row">
-<div class="col-xs-12 col-md-6">
-    <h1>TITRE</h1>
-   <p><font color="black">Blabla  </font></p>
-     
-
-    
-    <h3>Titre </h3>
-
-   <p><font color="black">Blabla  </font></p>
- </div>
-   <div class="col-xs-12 col-md-6">
-<img class="img-responsive" alt="" src="./assets/images/classement.png">
-    </div>   
-</div> 
-    
-
-
-
 <script>
 document.addEventListener("DOMContentLoaded", function (event) {
   navbarToggleSidebar();
