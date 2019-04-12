@@ -343,15 +343,15 @@ var drawPL = function () {
 var chart = new CanvasJS.Chart("chartContainer2", {
 	animationEnabled: true,
 	title:{
-		text: "Daily High Temperature at Different Beaches"
+		text: "Financement des transferts par les droits TV"
 	},
 	axisX: {
-		valueFormatString: "DD MMM,YY"
+		valueFormatString: "YYYY"
 	},
 	axisY: {
-		title: "Temperature (in °C)",
+		title: "Montant en M€",
 		includeZero: false,
-		suffix: " °C"
+		suffix: " M€"
 	},
 	legend:{
 		cursor: "pointer",
@@ -360,51 +360,63 @@ var chart = new CanvasJS.Chart("chartContainer2", {
 	},
 	toolTip:{
 		shared: true
+        
 	},
 	data: [{
-		name: "Myrtle Beach",
+		name: "Transferts",
 		type: "spline",
-		yValueFormatString: "#0.## °C",
+		yValueFormatString: "#0.## M€",
 		showInLegend: true,
 		dataPoints: [
-			{ x: new Date(2017,6,24), y: 31 },
-			{ x: new Date(2017,6,25), y: 31 },
-			{ x: new Date(2017,6,26), y: 29 },
-			{ x: new Date(2017,6,27), y: 29 },
-			{ x: new Date(2017,6,28), y: 31 },
-			{ x: new Date(2017,6,29), y: 30 },
-			{ x: new Date(2017,6,30), y: 29 }
-		]
+                        { x: new Date(2000, 0, 3), y: 443 },
+
+            { x: new Date(2001, 0, 1), y: 443 },
+	        { x: new Date(2002, 0, 1), y: 557 },
+	        { x: new Date(2003, 0, 1), y: 330 },
+            { x: new Date(2004, 0, 1), y: 410 },
+            { x: new Date(2005, 0, 1), y: 479 },
+			{ x: new Date(2006, 0, 1), y: 469 },
+			{ x: new Date(2007, 0, 1), y: 477 },
+			{ x: new Date(2008, 0, 1), y: 784 },
+			{ x: new Date(2009, 0, 1), y: 755 },
+			{ x: new Date(2010, 0, 1), y: 502 },
+			{ x: new Date(2011, 0, 1), y: 622 },
+			{ x: new Date(2012, 0, 1), y: 550 },
+			{ x: new Date(2013, 0, 1), y: 674 },
+			{ x: new Date(2014, 0, 1), y: 795 },
+			{ x: new Date(2015, 0, 1), y: 1108 },
+			{ x: new Date(2016, 0, 1), y: 1299 },
+            { x: new Date(2017, 0, 1), y: 1462 },
+            { x: new Date(2018, 0, 1), y: 1943 },
+            { x: new Date(2019, 0, 1), y: 1023 }		]
 	},
 	{
-		name: "Martha Vineyard",
+		name: "Droits TV",
 		type: "spline",
-		yValueFormatString: "#0.## °C",
+		yValueFormatString: "#0.## M€",
 		showInLegend: true,
 		dataPoints: [
-			{ x: new Date(2017,6,24), y: 20 },
-			{ x: new Date(2017,6,25), y: 20 },
-			{ x: new Date(2017,6,26), y: 25 },
-			{ x: new Date(2017,6,27), y: 25 },
-			{ x: new Date(2017,6,28), y: 25 },
-			{ x: new Date(2017,6,29), y: 25 },
-			{ x: new Date(2017,6,30), y: 25 }
-		]
-	},
-	{
-		name: "Nantucket",
-		type: "spline",
-		yValueFormatString: "#0.## °C",
-		showInLegend: true,
-		dataPoints: [
-			{ x: new Date(2017,6,24), y: 22 },
-			{ x: new Date(2017,6,25), y: 19 },
-			{ x: new Date(2017,6,26), y: 23 },
-			{ x: new Date(2017,6,27), y: 24 },
-			{ x: new Date(2017,6,28), y: 24 },
-			{ x: new Date(2017,6,29), y: 23 },
-			{ x: new Date(2017,6,30), y: 23 }
-		]
+                        { x: new Date(2000, 0, 3), y: 134 },
+
+            { x: new Date(2001, 0, 1), y: 134 },
+	        { x: new Date(2002, 0, 1), y: 134 },
+	        { x: new Date(2003, 0, 1), y: 400 },
+            { x: new Date(2004, 0, 1), y: 400 },
+            { x: new Date(2005, 0, 1), y: 400 },
+			{ x: new Date(2006, 0, 1), y: 341 },
+			{ x: new Date(2007, 0, 1), y: 341 },
+			{ x: new Date(2008, 0, 1), y: 341 },
+			{ x: new Date(2009, 0, 1), y: 569 },
+			{ x: new Date(2010, 0, 1), y: 569 },
+			{ x: new Date(2011, 0, 1), y: 569 },
+			{ x: new Date(2012, 0, 1), y: 591 },
+			{ x: new Date(2013, 0, 1), y: 591 },
+			{ x: new Date(2014, 0, 1), y: 591 },
+			{ x: new Date(2015, 0, 1), y: 1006 },
+			{ x: new Date(2016, 0, 1), y: 1006 },
+            { x: new Date(2017, 0, 1), y: 1006 },
+            { x: new Date(2018, 0, 1), y: 1712 },
+            { x: new Date(2019, 0, 1), y: 1712 }		]
 	}]
 });
 chart.render();
