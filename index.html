@@ -168,21 +168,100 @@
       <br />
     <br /> 
         				<h3 class="section-subheading text-muted">→ Le montant des transferts s’élève a plus de 35 milliards d’euros depuis 2000. <br /><br />→ La Premier league se classe 1ère avec un montant des transferts supérieur à la France, l’Espagne et l’Allemagne réunis. </h3>
-        		<br />
+        		
               <center> <img src="img/portfolio/barre.png"  alt=""/> </center>
         <br />
 <br />
-
+<br />
         <div class="container text-center">
 						
           <h4 class="section-subheading text-muted">Comment expliquer tout cet appétit pour les joueurs ? <br />La rentabilité est-elle assurée ?</h4>
-              <br />  <br />
+                             <br />  <br />
+
 								</div>
-
-
 				</div>  
-                 
+              <!-- Begin repartition chart  -->
+      
+<div id="chartContainer3" style="height: 300px; width: 95%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+<script>
+var drawREP = function () {
+
+var chart = new CanvasJS.Chart("chartContainer3", {
+	animationEnabled: true,
+	theme: "light2", //"light1", "dark1", "dark2"
+	title:{
+		text: "Répartition des revenues 2016/2017 des ligues du Big five en M€"             
+	},
+
+	toolTip:{
+		shared: true
+	},
+	data:[{
+		type: "stackedBar",
+		toolTipContent: "{label}<br><b>{name}:</b> {y} ",
+		showInLegend: true, 
+		name: "Billeterie",
+		dataPoints: [
+			{ y: 182, label: "Ligue 1" },
+			{ y: 217, label: "Serie A" },
+			{ y: 504, label: "Bundesliga" },
+			{ y: 544, label: "La Liga" },
+			{ y: 718, label: "Premier League" }
+		]
+		},
+          {
+			type: "stackedBar",
+			toolTipContent: "<b>{name}:</b> {y}",
+			showInLegend: true, 
+			name: "Droits TV",
+			dataPoints: [
+			{ y: 819, label: "Ligue 1" },
+			{ y: 1244, label: "Serie A" },
+			{ y: 960, label: "Bundesliga" },
+			{ y: 1484, label: "La Liga" },
+			{ y: 3221, label: "Premier League" }
+			]
+		}, 
+		{
+			type: "stackedBar",
+			toolTipContent: "<b>{name}:</b> {y}",
+			showInLegend: true, 
+			name: "Sponsors/commerce",
+			dataPoints: [
+			{ y: 345, label: "Ligue 1" },
+			{ y: 614, label: "Serie A" },
+			{ y: 854, label: "Bundesliga" },
+			{ y: 826, label: "La Liga" },
+			{ y: 1358, label: "Premier League" }
+			]
+		}, 
+		{
+			type: "stackedBar",
+			toolTipContent: "<b>{name}:</b> {y}",
+			showInLegend: true, 
+			name: "Autres activités commerciales",
+			dataPoints: [
+			{ y: 297, label: "Ligue 1" },
+			{ y: 0, label: "Serie A" },
+			{ y: 475, label: "Bundesliga" },
+			{ y: 0, label: "La Liga" },
+			{ y: 0, label: "Premier League" }
+			]
+	}]
+});
+chart.render();
+
+}
+</script>
+            <center> <img src="img/portfolio/barre.png"  alt=""/> </center>
+
+<!-- End repartition chart  -->
+                 <br />  <br />
+
   <br />
+      
       
 
     
@@ -464,7 +543,7 @@ window.onload = function () {
     drawB5();
     // draw diag
     drawPL  ();
-    // draw the rest
+    drawREP  ();
 
 };    
 </script>
