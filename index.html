@@ -423,6 +423,104 @@ function toggleDataSeries(e) {
                    <h3 class="section-subheading text-muted">→ L’économie du football connait un changement en profondeur. L’influence des pays commence a remplacer les grandes marques commerciales mais leurs investissements revêtent différents aspects. Par exemple, Paul Kagame, président du Rwanda, a investi 30m d’euros pour sponsoriser Arsenal. Le Tchad (122e PIB Mondial) a signé un accord avec le club français Metz. Ces deux exemples montrent que les investissements servent à promouvoir le tourisme dans des pays en développement. <br />
                        <br />→ Cependant, en ce qui concerne les petromonarchies, les investissements faits servent à diversifier l’économie du pétrole et du gaz vers le tourisme et les loisirs. L a Qatar Foundation, ex-sponsor du FC Barcelone, a payé au club Catalan 150m d’euros en 2011.  Tamin bin Hamad Al-Thani, l’Emir du Qatar, a acheté le Paris Saint Germain en 2011. Ces investissements peuvent être analysés d’un point de vue géopolitique également dans le mesure ou le Qatar veut faire car a la menace représentée par l’Arabie saoudite en gagnant en soft power pour nettoyer leur image.  <br />
           <br />→ En 2015, 38% des 2.7millions spectateurs de la Première League étaient chinois, un chiffre qui reste similaire dans les autres leagues européennes. Les marques en sont conscientes, et comme Chevrolet avec Man Utd, ils ne cherchent pas forcément a augmenter les ventes localement mais plutôt à accélérer les consommateurs en Asie, Afrique et au Moyen Orient. </h3> 
+          
+    <div id="chartContainer4" style="height: 300px; width: 90%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+          <script>
+var drawSP = function () {
+
+var chart = new CanvasJS.Chart("chartContainer4", {
+	theme:"light2",
+	animationEnabled: true,
+	title:{
+		text: "Evolution du sponsoring"
+	},
+	axisY :{
+		includeZero: false,
+		title: "Montant",
+		suffix: "M€"
+	},
+	toolTip: {
+		shared: "true"
+	},
+	legend:{
+		cursor:"pointer",
+		itemclick : toggleDataSeries
+	},
+	data: [{
+
+		type: "spline",
+		showInLegend: true,
+		yValueFormatString: "#### M€",
+		name: "Premier League",
+		dataPoints: [
+			{ label: "2014-2015", y: 1295 },
+			{ label: "2015-2016", y: 1457 },
+			{ label: "2016-2017", y: 1358 }
+		]
+	},
+	{
+
+		type: "spline", 
+		showInLegend: true,
+		yValueFormatString: "#### M€",
+		name: "Bundersliga",
+		dataPoints: [
+			{ label: "2014-2015", y: 1140 },
+			{ label: "2015-2016", y: 1251 },
+			{ label: "2016-2017", y: 826 }
+		]
+	},
+	{
+
+		type: "spline",
+		showInLegend: true,
+		yValueFormatString: "#### M€",
+		name: "La Liga",
+		dataPoints: [
+			{ label: "2014-2015", y: 643 },
+			{ label: "2015-2016", y: 705 },
+			{ label: "2016-2017", y: 1329 }
+		]
+	},
+	{
+
+		type: "spline", 
+		showInLegend: true,
+		yValueFormatString: "#### M€",
+		name: "Serie A",
+		dataPoints: [
+			{ label: "2014-2015", y: 483 },
+			{ label: "2015-2016", y: 523 },
+			{ label: "2016-2017", y: 614 }
+		]
+	},
+	{
+
+		type: "spline", 
+		showInLegend: true,
+		yValueFormatString: "#### M€",
+		name: "Ligue 1",
+		dataPoints: [
+			{ label: "2014-2015", y: 625 },
+			{ label: "2015-2016", y: 665 },
+			{ label: "2016-2017", y: 642 }
+		]
+	}]
+});
+chart.render();
+
+function toggleDataSeries(e) {
+	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible ){
+		e.dataSeries.visible = false;
+	} else {
+		e.dataSeries.visible = true;
+	}
+	chart.render();
+}
+
+}
+</script>
            <center> <img src="img/portfolio/barre.png"  alt=""/> </center>
   
                   </div>  
@@ -571,6 +669,8 @@ window.onload = function () {
     drawB5();
     // draw diag
     drawPL  ();
+        drawSP  ();
+
     drawREP  ();
 
 };    
